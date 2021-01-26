@@ -49,7 +49,7 @@
 			<img src="/assets/img/phoenix.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/"></a></h1>
+		  <h1 class="header-author"><a href="/">Phoenix</a></h1>
 		</hgroup>
 		
 
@@ -107,7 +107,7 @@
 				<img src="/assets/img/phoenix.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author"></h1>
+			  <h1 class="header-author js-header-author">Phoenix</h1>
 			</hgroup>
 			
 			
@@ -155,30 +155,315 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java核心技术卷I-笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/">emm</a>
+      <a class="article-title" href="/2021/01/26/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7I-%E7%AC%94%E8%AE%B0/">Java核心技术卷I 笔记</a>
     </h1>
   
 
         
-        <a href="/2021/01/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/" class="archive-article-date">
-  	<time datetime="2021-01-15T12:44:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-15</time>
+        <a href="/2021/01/26/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7I-%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-01-26T05:46:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>一个人想要变得更强 就必须要看清现在的自己<br>当你还是个弱者的时候 这很容易做到<br>可是当你在某方面变成了强者<br>就会被这短暂的强大蒙蔽双眼</p>
-<p>——《镇魂街》</p>
+        <h1 id="Java核心技术卷I-笔记（持续更新中）"><a href="#Java核心技术卷I-笔记（持续更新中）" class="headerlink" title="Java核心技术卷I 笔记（持续更新中）"></a>Java核心技术卷I 笔记（持续更新中）</h1><hr>
+<h3 id="Charpter-I-Introduction"><a href="#Charpter-I-Introduction" class="headerlink" title="Charpter I. Introduction"></a>Charpter I. Introduction</h3><h4 id="1-Java具有可移植性"><a href="#1-Java具有可移植性" class="headerlink" title="1.Java具有可移植性"></a>1.Java具有可移植性</h4><p>Java的数据类型具有固定的大小,同时二进制数据以固定的格式进行存储和传输。</p>
+<p>而C/C++中,int 可能是 16 位整数、 32 位整数，也可能是编译器提供商指定的其他大小。唯一的限制只是 int 类型的大小不能低于 short int, 并且不能高于 long int。</p>
+<h4 id="2-常见Java术语"><a href="#2-常见Java术语" class="headerlink" title="2.常见Java术语"></a>2.常见Java术语</h4><p><img src="https://s3.ax1x.com/2021/01/26/sX21XD.png" alt="常见Java术语" title="常见Java术语"></p>
+<h4 id="3-Java的一些规范"><a href="#3-Java的一些规范" class="headerlink" title="3.Java的一些规范"></a>3.Java的一些规范</h4><p>Java区分大小写;</p>
+<p>Java变量/类的命名应遵循驼峰命名法;</p>
+<p>源代码的文件名必须与公共类的名字相同;</p>
+<p>一般不在一行中声明多个变量，逐一声明变量可以提高程序的可读性;</p>
+<h4 id="4-注释"><a href="#4-注释" class="headerlink" title="4.注释"></a>4.注释</h4><p>类注释：以/** 为开始 */为结束</p>
+<p>行注释：//或者/* */</p>
+<p>方法注释:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*<span class="doctag">@param</span>:变量描述</span></span><br><span class="line"><span class="comment">*<span class="doctag">@return</span>:描述</span></span><br><span class="line"><span class="comment">*<span class="doctag">@throws</span>:类描述</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-数据类型"><a href="#5-数据类型" class="headerlink" title="5.数据类型"></a>5.数据类型</h4><p>Java是强类型语言,变量必须声明类型;(JavaScript是弱类型语言,直接用var声明变量,同时具有弱类型语言的===判断全等)</p>
+<p>基本类型:int short long byte(无c++中的long long) float double char boolean</p>
+<p>(String不是基本类型,String是封装好的类,所以S大写!)</p>
+<h5 id="（1）整型"><a href="#（1）整型" class="headerlink" title="（1）整型"></a>（1）整型</h5><p>长整型数值有L或l后缀;</p>
+<p>十六进制ox前缀,八进制o前缀,二进制0b前缀;</p>
+<p>Java中没有无符号整型unsigned;</p>
+<h5 id="（2）浮点类型"><a href="#（2）浮点类型" class="headerlink" title="（2）浮点类型"></a>（2）浮点类型</h5><p>float类型有后缀f或者F,没有后缀的默认都为double类型;</p>
+<ul>
+<li><p>特殊的浮点类型:正无穷大,负无穷大,NaN(不是一个数字，一般是0/0或者负数的平方根会出现结果为NaN)</p>
+</li>
+<li><p>Java中认为所有的非数值都是不相同的,判断是不是NaN可以使用Double.isNaN方法</p>
+</li>
+<li><p>浮点误差的来源是浮点数值采用二进制系统表示,在二进制系统中无法精确的表示小数,如果需要精确计算需要使用BigDecimal类.</p>
+</li>
+</ul>
+<h5 id="（3）char类型"><a href="#（3）char类型" class="headerlink" title="（3）char类型"></a>（3）char类型</h5><p>char类型的字面量值需要用单引号括起来（eg:’A’;</p>
+<p>char类型的值可以表示为十六进制值，范围从\u0000到\Uffff;</p>
+<p>还有一些特殊的转移序列，类似于c语言;</p>
+<p>程序中一般不使用char类型，除非确实要使用UTF-16代码单元;</p>
+<h5 id="（4）boolean类型"><a href="#（4）boolean类型" class="headerlink" title="（4）boolean类型"></a>（4）boolean类型</h5><ul>
+<li><p>整型值和boolean类型值不能相互转换（而C++中可以</p>
+<p>eg：我们熟悉的 if（x) 在c++中值0代替false，非0代替true，但是在Java中就不能通过编译;</p>
+</li>
+</ul>
+<h4 id="6-变量"><a href="#6-变量" class="headerlink" title="6.变量"></a>6.变量</h4><p>声明变量后必须用赋值语句进行显式初始化，使用未初始化的变量会报错；</p>
+<p>Java可以把声明放在代码中的任何地方;(交给JVM去找)</p>
+<ul>
+<li>在Java中，使用关键词final指示常量，而在c++中使用const或者#define;</li>
+<li>可以使用static final设置一个类常量;</li>
+</ul>
+<h4 id="7-运算符"><a href="#7-运算符" class="headerlink" title="7.运算符"></a>7.运算符</h4><h5 id="（1）数学函数与常量"><a href="#（1）数学函数与常量" class="headerlink" title="（1）数学函数与常量"></a>（1）数学函数与常量</h5><p>在Math类中包含各种各样的数学函数,可以调用一些方法,eg:Math.sqrt(x);</p>
+<ul>
+<li><p>floorMod方法：确保余数≥0;</p>
+</li>
+<li><p>可以不用在每个方法前加Math. ，在源文件顶部加 import static java.lang.Math.*; 即可，静态导入;</p>
+</li>
+</ul>
+<h5 id="（2）强制类型转换"><a href="#（2）强制类型转换" class="headerlink" title="（2）强制类型转换"></a>（2）强制类型转换</h5><p>在()中给出想要转换的目标类型;</p>
+<h5 id="（3）运算符重载"><a href="#（3）运算符重载" class="headerlink" title="（3）运算符重载"></a>（3）运算符重载</h5><p>Java中不支持运算符重载,而C++可以;</p>
+<p>唯一例外是String类里面的=和+,而这是JVM的问题,程序员本身无法实现运算符重载;</p>
+<h4 id="8-字符串：String类"><a href="#8-字符串：String类" class="headerlink" title="8.字符串：String类"></a>8.字符串：String类</h4><h5 id="（1）拼接"><a href="#（1）拼接" class="headerlink" title="（1）拼接"></a>（1）拼接</h5><p>Java允许使用+号拼接两个字符串(JVM的操作);</p>
+<p>当将一个字符串与一个非字符串的值进行拼接时，后者被转换成字符串;</p>
+<p>这种特性一般在print语句中,eg:System.out.println(“The answer is “ + answer);</p>
+<h5 id="（2）不可变字符串"><a href="#（2）不可变字符串" class="headerlink" title="（2）不可变字符串"></a>（2）不可变字符串</h5><p>String类没有提供用于修改字符串的方法;</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/eydwyz/article/details/88861417">为什么String类字符串在Java中是不可修改的</a></p>
+<h5 id="（3）String类类似于char-指针"><a href="#（3）String类类似于char-指针" class="headerlink" title="（3）String类类似于char*指针"></a>（3）String类类似于char*指针</h5><p>String类并非字符型数组(c++中是)</p>
+<h5 id="（4）检测字符串是否相等"><a href="#（4）检测字符串是否相等" class="headerlink" title="（4）检测字符串是否相等"></a>（4）检测字符串是否相等</h5><ul>
+<li><p>使用equals方法检测是否相等，不区分大小写可以使用equalsIgnoreCase方法;</p>
+</li>
+<li><p>一定不要使用==运算符检测两个字符串相等,==只是确定两个字符串是否放在同一个内存区域上。在C++中可以，因为C++可以重载运算符;</p>
+</li>
+<li><p>equals方法是Object超类定义的boolean类型方法;</p>
+</li>
+</ul>
+<h5 id="（5）空串与NULL串"><a href="#（5）空串与NULL串" class="headerlink" title="（5）空串与NULL串"></a>（5）空串与NULL串</h5><p>空串””是长度为0的字符串，可以使用length检测;</p>
+<p>null是特殊的值，检测使用str==null检测;</p>
+<h5 id="（6）StringBuilder-StringBuffer类"><a href="#（6）StringBuilder-StringBuffer类" class="headerlink" title="（6）StringBuilder,StringBuffer类"></a>（6）StringBuilder,StringBuffer类</h5><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/itchuxuezhe_yang/article/details/89966303">String,StringBuffer,StringBuilder类的区别</a></p>
+<h4 id="9-输入输出"><a href="#9-输入输出" class="headerlink" title="9.输入输出"></a>9.输入输出</h4><h5 id="（1）输入"><a href="#（1）输入" class="headerlink" title="（1）输入"></a>（1）输入</h5><p>首先构造个Scanner对象,并与标准输入流System.in关联:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
+<p>现在可以使用Scanner类的各种方法实现输入操作;</p>
+<p>eg:nextLine方法可以输入一行,next方法可以输入一个单词;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = in.nextLine();</span><br><span class="line">String firstName = in.next();</span><br></pre></td></tr></table></figure>
+<p>Scanner类定义在java.util包中,需要加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>读取密码使用Console类对象</li>
+</ul>
+<h5 id="（2）格式化输出"><a href="#（2）格式化输出" class="headerlink" title="（2）格式化输出"></a>（2）格式化输出</h5><p>类似于c语言的printf方法;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;%8.2f&quot;</span>,x);</span><br></pre></td></tr></table></figure>
+<h5 id="（3）文件输入输出"><a href="#（3）文件输入输出" class="headerlink" title="（3）文件输入输出"></a>（3）文件输入输出</h5><p>读取:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = <span class="keyword">new</span> Scanner (Paths.get(<span class="string">&quot;Myfile.txt&quot;</span>),<span class="string">&quot;UTF-8&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>写入文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter out = <span class="keyword">new</span> PrintWriter(<span class="string">&quot;Myfile.txt&quot;</span>,<span class="string">&quot;UTF-8&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="10-大数值"><a href="#10-大数值" class="headerlink" title="10.大数值"></a>10.大数值</h4><p>如果基本的整数和浮点数精度不能够满足需求， 那么可以使用java.math 包中的两个很有用的类：Biglnteger 和 BigDecimal。</p>
+<p>这两个类可以处理包含任意长度数字序列的数值。 </p>
+<p>Biglnteger 类实现了任意精度的整数运算, BigDecimal 实现了任意精度的浮点数运算。</p>
+<ul>
+<li><p>使用静态的valueOf方法可以将普通的数值转化为大数值;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BigInteger a = BigInteger.valueOf(<span class="number">100</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>Java不能重载运算符,需要使用add和multiply方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BigInteger c = a.add(b);<span class="comment">//c=a+b;</span></span><br><span class="line">BigInteger d = c.multiply(b.add(BigInteger.valueOf(<span class="number">2</span>)));<span class="comment">//d=c*(b+2);</span></span><br></pre></td></tr></table></figure></li>
+<li><p>加add减subtract乘multiply除divide余mod相等compareTo方法</p>
+</li>
+</ul>
+<h4 id="11-数组"><a href="#11-数组" class="headerlink" title="11.数组"></a>11.数组</h4><h5 id="（1）创建数组"><a href="#（1）创建数组" class="headerlink" title="（1）创建数组"></a>（1）创建数组</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建一个数字数组，所有数据初始化为0，boolean类型初始化为false，对象数组类型初始化为NULL;</li>
+</ul>
+<h5 id="（2）for-each-循环"><a href="#（2）for-each-循环" class="headerlink" title="（2）for each 循环"></a>（2）for each 循环</h5><p>可以用来依次处理数组中的每个元素，无需care下标值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(variable : collection) statement</span><br><span class="line">    <span class="comment">//先声明与数组类型相同的变量用于后续遍历</span></span><br></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> element ： a) </span><br><span class="line">    System.out.println(element);</span><br><span class="line"><span class="comment">//打印a数组中的所有元素并换行</span></span><br></pre></td></tr></table></figure>
 <hr>
-
+<h3 id="Charpter2-对象与类"><a href="#Charpter2-对象与类" class="headerlink" title="Charpter2.对象与类"></a>Charpter2.对象与类</h3><h4 id="1-面向过程和面向对象"><a href="#1-面向过程和面向对象" class="headerlink" title="1.面向过程和面向对象"></a>1.面向过程和面向对象</h4><ul>
+<li>C语言为面向过程语言,强调Algorithm+Data Structures =Programs,算法第一位,数据结构第二位.</li>
+<li>Java为面向对象语言,作为OOP语言,将数据放在第一位,然后再考虑操作数据的算法.OOP适用于解决规模较大的问题.</li>
+</ul>
+<h4 id="2-Class"><a href="#2-Class" class="headerlink" title="2.Class"></a>2.Class</h4><h5 id="（1）对象变量"><a href="#（1）对象变量" class="headerlink" title="（1）对象变量"></a>（1）对象变量</h5><ul>
+<li>一个对象变量并没有实际包含一个对象，而是仅仅引用一个对象。</li>
+</ul>
+<h5 id="（2）按值调用"><a href="#（2）按值调用" class="headerlink" title="（2）按值调用"></a>（2）按值调用</h5><ul>
+<li>在Java中总是按值传递;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> price=<span class="number">300</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">raisePrice</span><span class="params">(<span class="keyword">int</span> tmp)</span></span>&#123;</span><br><span class="line">    tmp+=<span class="number">200</span>;</span><br><span class="line">&#125;</span><br><span class="line">raisePrice(price);</span><br><span class="line"><span class="comment">//最终发现price值并没有改变，因为在Java中形参是按值传递</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>关于对象作为引用参数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">raiseSalary</span><span class="params">(Employee s)</span></span>&#123;</span><br><span class="line">    s.salary+=<span class="number">500</span>;<span class="comment">//这里为了清晰没有使用封装后的setter;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里,形参为对象,传递时先拷贝其内容再引用,本质还是按值传递.</p>
+<p>图解:</p>
+<p><img src="https://s3.ax1x.com/2021/01/26/sX2Q1K.png" alt="图解"></p>
+<ul>
+<li>“按值传递”的一个经典案例</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(Employee e1,Employee e2)</span></span>&#123;</span><br><span class="line">    Employee tmp = e1;</span><br><span class="line">    e1 = e2;</span><br><span class="line">    e2 = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看似可以实现e1与e2引用对象的交换，实际失败了;</p>
+<p>图解:</p>
+<p><img src="https://s3.ax1x.com/2021/01/26/sX2Mp6.png" alt="图解"></p>
+<p>原因:实际上交换的是两个拷贝，并没有交换e1，e2引用对象的本身。</p>
+<ul>
+<li>更准确的define值调用和引用调用:</li>
+<li>值调用:在参数传递过程中，形参和实参占用了两个完全不同的内存空间。形参锁存储的内容是实参存储内容的一份拷贝。</li>
+<li>引用调用:在参数传递的过程中，形参和实参完全是同一块内存空间。</li>
+</ul>
+<h4 id="3-封装"><a href="#3-封装" class="headerlink" title="3.封装"></a>3.封装</h4><h5 id="（1）Concept"><a href="#（1）Concept" class="headerlink" title="（1）Concept"></a>（1）Concept</h5><p>将类的某些信息隐藏在类的内部,不允许外部程序直接访问,而是通过该类提供的方法来实现对隐藏信息的访问和操作;</p>
+<h5 id="（2）实现"><a href="#（2）实现" class="headerlink" title="（2）实现"></a>（2）实现</h5><p>getter()&amp;setter()方法</p>
+<p>在IDEA中 Alt+Insert ,可以直接设置</p>
+<p>也可使用Lombok的jar包 @Getter @Setter</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(age &lt; <span class="number">0</span> || age &gt; <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = <span class="number">0</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;输入的年龄非法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-静态域和静态方法"><a href="#4-静态域和静态方法" class="headerlink" title="4.静态域和静态方法"></a>4.静态域和静态方法</h4><h5 id="（1）静态域"><a href="#（1）静态域" class="headerlink" title="（1）静态域"></a>（1）静态域</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> nextId=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">()</span></span>&#123;</span><br><span class="line">        id=nextId;</span><br><span class="line">        nextId++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//nextId属于静态域，即使该类没有对象仍存在，可以直接调用，无需引用对象;</span></span><br></pre></td></tr></table></figure>
+<h4 id="（2）静态常量"><a href="#（2）静态常量" class="headerlink" title="（2）静态常量"></a>（2）静态常量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Math</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> PI=<span class="number">3.14159265358979323846</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用final是因为该值不可变,使用static是因为无需对象即可调用PI，PI为静态域而非实例域;</span></span><br></pre></td></tr></table></figure>
+<h4 id="（3）静态方法"><a href="#（3）静态方法" class="headerlink" title="（3）静态方法"></a>（3）静态方法</h4><ul>
+<li>静态方法是一种不能向对象实施操作的方法;也可以认为是没有this参数的方法</li>
+</ul>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getNextId</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> nextId;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n = Employee.nextId();</span><br><span class="line"><span class="comment">//可以通过类名调用这个方法</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>使用静态方法的两种情况：  </p>
+<p>1.方法不需要访问对象状态，其所需参数都是通过显式参数提供(eg：Math.pow)</p>
+<p>2.方法只需要访问类的静态域(访问静态域必须用静态方法)</p>
+</li>
+</ul>
+<h4 id="5-对象构造"><a href="#5-对象构造" class="headerlink" title="5.对象构造"></a>5.对象构造</h4><h5 id="（1）重载-Overloading"><a href="#（1）重载-Overloading" class="headerlink" title="（1）重载 Overloading"></a>（1）重载 Overloading</h5><p>如果多个方法有相同的名字，不同的参数，便产生了重载。</p>
+<p>在编译过程中，编译器通过用各个方法给出的参数类型与特定方法调用所使用的值类型进行匹配来挑选出相应的方法。这个过程叫做重载解析。</p>
+<h5 id="（2）无参数构造器"><a href="#（2）无参数构造器" class="headerlink" title="（2）无参数构造器"></a>（2）无参数构造器</h5><ul>
+<li>必要性：在new一个对象时就会使用无参数构造器。</li>
+<li>如果在编写一个类时没有写构造器，那么系统会提供一个无参数的构造器。</li>
+<li>如果类中提供了至少一个构造器，系统不会自动提供无参构造器，必须自己写，否则new的时候会报错。</li>
+</ul>
+<p>无参构造器形式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ClassName</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="（3）调用另一个构造器"><a href="#（3）调用另一个构造器" class="headerlink" title="（3）调用另一个构造器"></a>（3）调用另一个构造器</h5><p>如果构造器的第一个语句形如this(…)，表明这个构造器将调用同一类的另一个构造器。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(<span class="keyword">double</span> s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(<span class="string">&quot;Employee #&quot;</span>+nextId,s);<span class="comment">// calls Employee(String,double)</span></span><br><span class="line">    nextId++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-包"><a href="#6-包" class="headerlink" title="6.包"></a>6.包</h4><p>使用包的主要原因是确保类名的唯一性，Sun公司建议将公司的因特网域名以逆序的形式作为包名.eg:com.google</p>
+<ul>
+<li>包的导入：使用import语句 eg：import java.util.*;</li>
+<li>还可以导入静态域：eg：import static java.lang.System.*;</li>
+<li>将类放到包中:package com.google.corejava;</li>
+</ul>
+<hr>
+<h3 id="Charpter3-继承"><a href="#Charpter3-继承" class="headerlink" title="Charpter3.继承"></a>Charpter3.继承</h3><h4 id="1-类，超类和子类"><a href="#1-类，超类和子类" class="headerlink" title="1.类，超类和子类"></a>1.类，超类和子类</h4><h5 id="（1）定义子类"><a href="#（1）定义子类" class="headerlink" title="（1）定义子类"></a>（1）定义子类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="keyword">extends</span> <span class="title">Employee</span></span>&#123;</span><br><span class="line">    statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Java中，我们使用extends关键词表示继承，而在C++中使用：。在Java中所有的继承都是公有继承,没有C++中的私有继承和保护继承。</p>
+<ul>
+<li>已存在的类称为超类，基类或者父类;</li>
+</ul>
+<h5 id="（2）重写-覆盖-Override"><a href="#（2）重写-覆盖-Override" class="headerlink" title="（2）重写/覆盖 Override"></a>（2）重写/覆盖 Override</h5><ul>
+<li><p>在IDEA中可以直接Alt+Insert然后选择Override</p>
+</li>
+<li><p>使用super调用超类 eg:super.getSalary();可以调用超类的方法，也可以类似this那样调用超类的构造器;</p>
+</li>
+</ul>
+<h5 id="（3）继承层次"><a href="#（3）继承层次" class="headerlink" title="（3）继承层次"></a>（3）继承层次</h5><p>一个祖先类可以拥有多个子孙继承链，但是Java中不支持多继承。</p>
+<h5 id="（4）“断子绝孙”-final类和方法"><a href="#（4）“断子绝孙”-final类和方法" class="headerlink" title="（4）“断子绝孙”-final类和方法"></a>（4）“断子绝孙”-final类和方法</h5><ul>
+<li>不允许被继承/扩展的类可以使用final修饰符声明，final类中的所有方法自动变为final方法</li>
+<li>类中的特定方法也可以被final声明，被final声明的方法不能重写</li>
+</ul>
+<h5 id="（5）受保护访问"><a href="#（5）受保护访问" class="headerlink" title="（5）受保护访问"></a>（5）受保护访问</h5><p>private-仅对本类可见 public-对所有类可见</p>
+<p>protected-对本包和所有子类可见 default默认-对本包可见</p>
+<h5 id="（6）继承规则"><a href="#（6）继承规则" class="headerlink" title="（6）继承规则"></a>（6）继承规则</h5><ul>
+<li>父类中声明为 public 的方法在子类中也必须为 public。</li>
+<li>父类中声明为 protected 的方法在子类中要么声明为 protected，要么声明为 public，不能声明为 private。</li>
+<li>父类中声明为 private 的方法，不能够被继承。</li>
+</ul>
+<h4 id="2-多态"><a href="#2-多态" class="headerlink" title="2.多态"></a>2.多态</h4><h5 id="（1）理解"><a href="#（1）理解" class="headerlink" title="（1）理解"></a>（1）理解</h5><ul>
+<li>现实事物经常会体现出多种形态，如学生，学生是人的一种，则一个具体的同学张三既是<strong>学生</strong>也是<strong>人</strong>，即出现<strong>两种形态</strong>。                                                      </li>
+<li>Java作为面向对象的语言，同样可以描述一个事物的多种形态。如Student类继承了Person类，一个Student的对象便既是Student，又是Person。</li>
+</ul>
+<h5 id="（2）体现"><a href="#（2）体现" class="headerlink" title="（2）体现"></a>（2）体现</h5><ul>
+<li><p>定义格式：父类类型 变量名=new 子类类型();</p>
+</li>
+<li><p>多态体现为父类引用变量可以指向子类对象</p>
+</li>
+<li><p>注意：在使用多态后的父类引用变量调用方法时，会调用子类重写后的方法。</p>
+</li>
+</ul>
+<h5 id="（3）多态中成员的特点"><a href="#（3）多态中成员的特点" class="headerlink" title="（3）多态中成员的特点"></a>（3）多态中成员的特点</h5><ul>
+<li>多态成员变量:编译运行看左边</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fu f=<span class="keyword">new</span> Zi();</span><br><span class="line">System.out.println(f.num);<span class="comment">//输出超类的num</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>多态成员方法:编译看左边，运行看右边</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fu f=<span class="keyword">new</span> Zi();</span><br><span class="line">System.out.println(f1.show());<span class="comment">//调用重写后的方法</span></span><br></pre></td></tr></table></figure>
+<h5 id="（4）多态的转型"><a href="#（4）多态的转型" class="headerlink" title="（4）多态的转型"></a>（4）多态的转型</h5><ul>
+<li><p>多态的转型分为向上转型和向下转型两种</p>
+</li>
+<li><p>向上转型:多态本身就是向上转型的过程  </p>
+</li>
+<li><p>向下转型:一个已经向上转型的子类对象可以使用强制类型转换的格式，将父类引用类型转为子类引用各类型.一般当要使用子类特有功能时候用到;</p>
+<p>使用格式：子类类型 变量名=（子类类型） 父类类型的变量;</p>
+</li>
+</ul>
+<h4 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3.抽象类"></a>3.抽象类</h4><h5 id="（1）概念"><a href="#（1）概念" class="headerlink" title="（1）概念"></a>（1）概念</h5><p>将具体概念的诸多个性排出，集中描述其共性，产生抽象性概念。</p>
+<p>所有不同职业，年龄的人，共性都是人。</p>
+<p>拥有抽象方法的类就是抽象类，抽象类要用abstract修饰声明。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">People</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;haha!&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;<span class="comment">//抽象方法，继承时必须重写</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        People people = <span class="keyword">new</span> people();<span class="comment">//error 抽象类不可进行实例化操作</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="（2）使用原则"><a href="#（2）使用原则" class="headerlink" title="（2）使用原则"></a>（2）使用原则</h5><p>1.抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public；<br>2.抽象类不能直接实例化，需要依靠子类采用向上转型的方式处理；<br>3.抽象类必须有子类，使用extends继承，一个子类只能继承一个抽象类；<br>4.子类（如果不是抽象类）则必须覆写抽象类之中的全部抽象方法（如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。）；</p>
+<h4 id="4-Object-所有类的超类"><a href="#4-Object-所有类的超类" class="headerlink" title="4.Object:所有类的超类"></a>4.Object:所有类的超类</h4><h5 id="（1）equals方法"><a href="#（1）equals方法" class="headerlink" title="（1）equals方法"></a>（1）equals方法</h5><ul>
+<li>重写equals方法:先调用超类的equals方法判断,再增加特定的判断条件;</li>
+</ul>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="keyword">extends</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object otherObject)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (!sԤerequals(otherObject)) <span class="keyword">return</span> <span class="keyword">false</span>; </span><br><span class="line">        Manager other = (Manager) otherObject; </span><br><span class="line">        <span class="keyword">return</span> bonus == other.bonus; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="（2）hashCode方法"><a href="#（2）hashCode方法" class="headerlink" title="（2）hashCode方法"></a>（2）hashCode方法</h5><ul>
+<li><p>hashCode(散列码)是由对象导出的一个整型值,没有规律.如果x和y是两个不同的对象,x.hashCode()与y.hashCode()基本不会相同.</p>
+</li>
+<li><p>Object类默认的hashCode方法导出的是对象储存地址;String类重写了这个方法,由字符串内容导出.</p>
+</li>
+</ul>
+<h5 id="（3）toString方法"><a href="#（3）toString方法" class="headerlink" title="（3）toString方法"></a>（3）toString方法</h5><ul>
+<li>Objcet超类默认带toString方法，不过可以自己重写变得更好一点;</li>
+<li>在IDEA中可以通过Alt+Insert找到toString;</li>
+</ul>
+<h4 id="5-ArrayList类（泛型数组列表）"><a href="#5-ArrayList类（泛型数组列表）" class="headerlink" title="5.ArrayList类（泛型数组列表）"></a>5.ArrayList类（泛型数组列表）</h4><h5 id="（1）声明"><a href="#（1）声明" class="headerlink" title="（1）声明"></a>（1）声明</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList &lt;类型名&gt; 变量名 = <span class="keyword">new</span> ArrayList &lt;类型名&gt;();</span><br></pre></td></tr></table></figure>
+<h5 id="（2）API"><a href="#（2）API" class="headerlink" title="（2）API"></a>（2）API</h5><ul>
+<li>通过add方法在数组列表的尾端添加一个元素;</li>
+<li>通过get和set方法实现访问或改变数组元素(Java不能重载[]运算符);</li>
+<li>使用toArray将数组元素拷贝到另一个数组中;</li>
+</ul>
+<hr>
+<h3 id="Charpter4-接口与内部类"><a href="#Charpter4-接口与内部类" class="headerlink" title="Charpter4.接口与内部类"></a>Charpter4.接口与内部类</h3><h4 id="1-接口（Interface"><a href="#1-接口（Interface" class="headerlink" title="1.接口（Interface)"></a>1.接口（Interface)</h4><h5 id="（1）Concept-1"><a href="#（1）Concept-1" class="headerlink" title="（1）Concept"></a>（1）Concept</h5><ul>
+<li><p>接口在Java中是一个抽象类型,是抽象方法的集合;</p>
+</li>
+<li><p>一般来说，如果一个抽象类只由抽象方法和全局常量所组成，这种情况下我们定义成一个接口;接口中没有构造方法;</p>
+</li>
+<li><p>接口是对动作的抽象，抽象类是对本质的抽象;</p>
+</li>
+</ul>
+<h4 id="（2）接口的使用"><a href="#（2）接口的使用" class="headerlink" title="（2）接口的使用"></a>（2）接口的使用</h4><ul>
+<li><p>接口必须要有子类，一个子类可以通过实现(implements)多个接口；</p>
+</li>
+<li><p>接口的子类（如果不是抽象类），那么必须要重写接口中的全部抽象方法；</p>
+</li>
+<li><p>接口的对象可以利用子类对象的向上转型（多态）进行实例化;</p>
+</li>
+<li><p>对于接口，抽象方法和全局常量可以不用写public abstract或者public static final，并且接口中的访问权限只有public一种;注意子类重写方法的时候必须用public修饰;</p>
+</li>
+<li><p>在Java中，一个抽象类只能继承一个抽象类;而一个接口可以通过extends继承多个接口;(但接口不能继承抽象类)</p>
+</li>
+<li><p>接口不能通过new实例化一个对象，但是可以声明接口的变量，接口变量必须引用实现了接口的类的对象;</p>
+</li>
+</ul>
+<h4 id="2-clone-Cloneable接口"><a href="#2-clone-Cloneable接口" class="headerlink" title="2.clone()/Cloneable接口"></a>2.clone()/Cloneable接口</h4><h5 id="（1）拷贝和克隆"><a href="#（1）拷贝和克隆" class="headerlink" title="（1）拷贝和克隆"></a>（1）拷贝和克隆</h5><p><img src="https://s3.ax1x.com/2021/01/26/sX2ufx.png" alt="拷贝和克隆"></p>
+<h5 id="（2）Object类的clone方法"><a href="#（2）Object类的clone方法" class="headerlink" title="（2）Object类的clone方法"></a>（2）Object类的clone方法</h5><ul>
+<li><p>Object类的clone方法声明为protected，子类只能调用受保护的clone方法来克隆它自己的对象;</p>
+</li>
+<li><p>Object类默认的clone方法是”浅拷贝”,并没有克隆对象中引用的其他对象;如果原对象和浅拷贝对象共享的子对象是不可变的类,那么这种共享相对安全,如String类,但是通常子对象是可变的,这样会导致这种共享是不安全的;</p>
+<p><img src="https://s3.ax1x.com/2021/01/26/sX2l6O.png" alt="浅拷贝"></p>
+</li>
+</ul>
+<h5 id="（3）Cloneable接口"><a href="#（3）Cloneable接口" class="headerlink" title="（3）Cloneable接口"></a>（3）Cloneable接口</h5><ul>
+<li><p>Cloneable接口是Java提供的一组标记接口之一,通常用途是确定一个类实现一个或者一组特定的方法,标记接口不包含任何方法,唯一的作用是允许在类型查询中使用instanceof;</p>
+</li>
+<li><p>重写方法创建深拷贝的例子</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Employee <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>&#123;</span><br><span class="line">        Employee cloned = (Employee) <span class="keyword">super</span>.clone();</span><br><span class="line">        cloned.hireDay = (Date) hireDay.clone();</span><br><span class="line">        <span class="keyword">return</span> cloned;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -190,7 +475,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/01/26/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7I-%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
@@ -372,7 +657,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">花卉实验高中/普普通通的退役竞赛生/化学/转行java后端开发/社恐</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Java后端开发</div>
   	  	
     	</section>
     
