@@ -15,9 +15,9 @@
   
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
-  <meta name="author" content="Phoenix">
+  <meta name="author" content="Shimmery">
   <meta name="keywords" content="Java后端开发">
-  <title>Java核心技术卷I 笔记 - Phoenix&#39;s Blog</title>
+  <title>Java核心技术卷I 笔记 - Shimmery&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -229,8 +229,7 @@
             <div class="markdown-body">
               <p>关于《Java核心技术卷I》的笔记以及JavaSE基础的一些思考;</p>
 <a id="more"></a>
-<h1 id="Java核心技术卷I-笔记（持续更新中）"><a href="#Java核心技术卷I-笔记（持续更新中）" class="headerlink" title="Java核心技术卷I 笔记（持续更新中）"></a>Java核心技术卷I 笔记（持续更新中）</h1><hr>
-<h3 id="Charpter-I-Introduction"><a href="#Charpter-I-Introduction" class="headerlink" title="Charpter I. Introduction"></a>Charpter I. Introduction</h3><h4 id="1-Java具有可移植性"><a href="#1-Java具有可移植性" class="headerlink" title="1.Java具有可移植性"></a>1.Java具有可移植性</h4><p>Java的数据类型具有固定的大小,同时二进制数据以固定的格式进行存储和传输。</p>
+<h1 id="Java核心技术卷I-笔记（持续更新中）"><a href="#Java核心技术卷I-笔记（持续更新中）" class="headerlink" title="Java核心技术卷I 笔记（持续更新中）"></a>Java核心技术卷I 笔记（持续更新中）</h1><h3 id="Charpter-I-Introduction"><a href="#Charpter-I-Introduction" class="headerlink" title="Charpter I. Introduction"></a>Charpter I. Introduction</h3><h4 id="1-Java具有可移植性"><a href="#1-Java具有可移植性" class="headerlink" title="1.Java具有可移植性"></a>1.Java具有可移植性</h4><p>Java的数据类型具有固定的大小,同时二进制数据以固定的格式进行存储和传输。</p>
 <p>而C/C++中,int 可能是 16 位整数、 32 位整数，也可能是编译器提供商指定的其他大小。唯一的限制只是 int 类型的大小不能低于 short int, 并且不能高于 long int。</p>
 <h4 id="2-常见Java术语"><a href="#2-常见Java术语" class="headerlink" title="2.常见Java术语"></a>2.常见Java术语</h4><p><img src="https://s3.ax1x.com/2021/01/26/sX21XD.png" srcset="/img/loading.gif" alt="常见Java术语" title="常见Java术语"></p>
 <h4 id="3-Java的一些规范"><a href="#3-Java的一些规范" class="headerlink" title="3.Java的一些规范"></a>3.Java的一些规范</h4><p>Java区分大小写;</p>
@@ -333,7 +332,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(variable : collection) statement<br>    <span class="hljs-comment">//先声明与数组类型相同的变量用于后续遍历</span><br></code></pre></td></tr></table></figure>
 <p>eg:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> element ： a) <br>    System.out.println(element);<br><span class="hljs-comment">//打印a数组中的所有元素并换行</span><br></code></pre></td></tr></table></figure>
-<hr>
+
 <h3 id="Charpter2-对象与类"><a href="#Charpter2-对象与类" class="headerlink" title="Charpter2.对象与类"></a>Charpter2.对象与类</h3><h4 id="1-面向过程和面向对象"><a href="#1-面向过程和面向对象" class="headerlink" title="1.面向过程和面向对象"></a>1.面向过程和面向对象</h4><ul>
 <li>C语言为面向过程语言,强调Algorithm+Data Structures =Programs,算法第一位,数据结构第二位.</li>
 <li>Java为面向对象语言,作为OOP语言,将数据放在第一位,然后再考虑操作数据的算法.OOP适用于解决规模较大的问题.</li>
@@ -401,7 +400,6 @@
 <li>还可以导入静态域：eg：import static java.lang.System.*;</li>
 <li>将类放到包中:package com.google.corejava;</li>
 </ul>
-<hr>
 <h3 id="Charpter3-继承"><a href="#Charpter3-继承" class="headerlink" title="Charpter3.继承"></a>Charpter3.继承</h3><h4 id="1-类，超类和子类"><a href="#1-类，超类和子类" class="headerlink" title="1.类，超类和子类"></a>1.类，超类和子类</h4><h5 id="（1）定义子类"><a href="#（1）定义子类" class="headerlink" title="（1）定义子类"></a>（1）定义子类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span></span>&#123;<br>    statement;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>在Java中，我们使用extends关键词表示继承，而在C++中使用：。在Java中所有的继承都是公有继承,没有C++中的私有继承和保护继承。</p>
 <ul>
@@ -480,7 +478,6 @@
 <li>通过get和set方法实现访问或改变数组元素(Java不能重载[]运算符);</li>
 <li>使用toArray将数组元素拷贝到另一个数组中;</li>
 </ul>
-<hr>
 <h3 id="Charpter4-接口与内部类"><a href="#Charpter4-接口与内部类" class="headerlink" title="Charpter4.接口与内部类"></a>Charpter4.接口与内部类</h3><h4 id="1-接口（Interface"><a href="#1-接口（Interface" class="headerlink" title="1.接口（Interface)"></a>1.接口（Interface)</h4><h5 id="（1）Concept-1"><a href="#（1）Concept-1" class="headerlink" title="（1）Concept"></a>（1）Concept</h5><ul>
 <li><p>接口在Java中是一个抽象类型,是抽象方法的集合;</p>
 </li>
@@ -520,7 +517,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Cloneable</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Employee <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException</span>&#123;<br>        Employee cloned = (Employee) <span class="hljs-keyword">super</span>.clone();<br>        cloned.hireDay = (Date) hireDay.clone();<br>        <span class="hljs-keyword">return</span> cloned;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
-<hr>
+
 <h3 id="Chartper5-异常处理机制"><a href="#Chartper5-异常处理机制" class="headerlink" title="Chartper5.异常处理机制"></a>Chartper5.异常处理机制</h3><h4 id="1-异常分类"><a href="#1-异常分类" class="headerlink" title="1.异常分类"></a>1.异常分类</h4><ul>
 <li>在Java语言中，所有异常对象都是派生于Throwable类的一个实例.</li>
 </ul>
