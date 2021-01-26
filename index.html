@@ -464,6 +464,49 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Employee <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>&#123;</span><br><span class="line">        Employee cloned = (Employee) <span class="keyword">super</span>.clone();</span><br><span class="line">        cloned.hireDay = (Date) hireDay.clone();</span><br><span class="line">        <span class="keyword">return</span> cloned;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h3 id="Chartper5-异常处理机制"><a href="#Chartper5-异常处理机制" class="headerlink" title="Chartper5.异常处理机制"></a>Chartper5.异常处理机制</h3><h4 id="1-异常分类"><a href="#1-异常分类" class="headerlink" title="1.异常分类"></a>1.异常分类</h4><ul>
+<li>在Java语言中，所有异常对象都是派生于Throwable类的一个实例.</li>
+</ul>
+<p><img src="https://s3.ax1x.com/2021/01/26/sjCSEQ.png" alt="异常分类"></p>
+<ul>
+<li><p>Error类描述了Java运行时系统的内部错误和资源耗尽错误,这种情况很少见;</p>
+</li>
+<li><p>Exception类分解为两个分支，一个分支派生于RuntimeException(由于程序本身错误),另一个分支包含其他异常,程序本身没有问题,但是由于出现像I/O错误这种的异常叫做其他异常;</p>
+<p>eg：派生于RuntimeException的异常包括以下几种情况:错误的类型转换,数组访问越界（ArrayIndexOutOfBoundsException),访问null空指针(NullPointerException)等等;</p>
+</li>
+<li><p>实际上，派生于Error类或RuntimeException类的所有异常称为非受查异常,所有其他的称为受查异常,编译器将检查所有的受查异常是否提供了异常处理器;</p>
+</li>
+</ul>
+<h4 id="2-抛出异常"><a href="#2-抛出异常" class="headerlink" title="2.抛出异常"></a>2.抛出异常</h4><ul>
+<li><p>方法应在首部使用throws声明所有可能抛出的异常（受查异常，无需声明派生于Error类或RuntimeException类的异常），每个异常用,隔开;</p>
+</li>
+<li><p>创建异常类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileFormatException</span> <span class="keyword">extends</span> <span class="title">IOExpection</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FileFormatException</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="comment">//也可不写</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> FileFormatException();<span class="comment">//抛出这个自己定义的异常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-捕获异常"><a href="#3-捕获异常" class="headerlink" title="3.捕获异常"></a>3.捕获异常</h4></li>
+</ul>
+<h5 id="（1）try-catch语句块"><a href="#（1）try-catch语句块" class="headerlink" title="（1）try-catch语句块"></a>（1）try-catch语句块</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    code;</span><br><span class="line">    more code;</span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionType e)&#123;</span><br><span class="line">    handler <span class="keyword">for</span> <span class="keyword">this</span> type</span><br><span class="line">&#125;<span class="keyword">catch</span>(OtherExceptionType e)&#123;</span><br><span class="line">    handler <span class="keyword">for</span> <span class="keyword">this</span> type</span><br><span class="line">&#125;...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果在try语句块中的任何代码抛出了一个在catch子句中说明的异常类，那么程序将跳过try语句块的其他代码，抛出的异常直接被所对应的catch捕获并执行catch中的处理器代码;</li>
+<li>在catch子句中可以再次抛出一个异常，再之后再进行解决;</li>
+</ul>
+<h5 id="（2）finally子句"><a href="#（2）finally子句" class="headerlink" title="（2）finally子句"></a>（2）finally子句</h5><ul>
+<li><p>不管是否有异常被捕获，finally子句中的代码都会被执行;一般在需要关闭资源的时候使用finally子句;</p>
+</li>
+<li><p>当finally子句中包含return语句时，将会出现一种意想不到的效果。假如利用return语句从try语句块中退出，在方法返回前，finally子句的内容将被执行，如果finally子句中也有一个return语句，这个返回值会覆盖原始的返回值;</p>
+</li>
+</ul>
+<h5 id="（3）分析堆栈轨迹元素"><a href="#（3）分析堆栈轨迹元素" class="headerlink" title="（3）分析堆栈轨迹元素"></a>（3）分析堆栈轨迹元素</h5><ul>
+<li>可以调用Throwable类的printStackTrace方法访问堆栈轨迹的文本描述信息;</li>
+</ul>
+<h4 id="4-异常声明碰到继承关系"><a href="#4-异常声明碰到继承关系" class="headerlink" title="4.异常声明碰到继承关系"></a>4.异常声明碰到继承关系</h4><ul>
+<li>当重写一个函数时，子类不能比超类声明抛出更多的异常;</li>
+<li>在子类的构造函数中,必须声明超类所可能抛出的全部异常;</li>
+<li>利用多态(向上转型)的思想去思考这个问题;</li>
+</ul>
+
       
 
       
