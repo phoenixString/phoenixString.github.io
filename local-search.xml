@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>关于Hexo博客部署遇到的一些问题及解决办法</title>
+    <link href="/2021/02/01/%E5%85%B3%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <url>/2021/02/01/%E5%85%B3%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<p>Read More</p><a id="more"></a><h2 id="关于Hexo博客部署遇到的一些问题及解决办法"><a href="#关于Hexo博客部署遇到的一些问题及解决办法" class="headerlink" title="关于Hexo博客部署遇到的一些问题及解决办法"></a>关于Hexo博客部署遇到的一些问题及解决办法</h2><h3 id="Spawn-failed"><a href="#Spawn-failed" class="headerlink" title="Spawn failed"></a>Spawn failed</h3><ul><li>使用hexo d后遇到了这种情况</li></ul><p><img src="https://s3.ax1x.com/2021/02/01/yebK1O.png" alt="代码"></p><p>经过了万能的百度后找到了解决办法</p><p>这种情况出现的原因是博客之前进行了多余的本地提交，导致跟git仓库中的不同步；</p><p>在**.deploy_git\.git\logs**（.git文件夹可能被隐藏，强制进入）中的HEAD文件（用万能的VSCode文本查看器）</p><p><img src="https://s3.ax1x.com/2021/02/01/yebQje.png" alt="HEAD"></p><p>对比github仓库里的最后提交时间</p><p><img src="https://s3.ax1x.com/2021/02/01/yebMcD.png" alt="github"></p><p>发现多了一个多余的本地提交，必须先返回到原来的状态才可</p><p>解决问题代码:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git reset --hard commitId<br></code></pre></td></tr></table></figure><p>这里的commitId是HEAD中的每一行的第二段ID,找到最后提交的那个状态返回到该状态即可解决该问题;</p><h3 id="文章目录收缩错误"><a href="#文章目录收缩错误" class="headerlink" title="文章目录收缩错误"></a>文章目录收缩错误</h3><p>这里因为忘了截图所以没有图…</p><p>大概的问题是当时我的文章(markdown格式)用的是</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus">h1<br>h3<br>h4<br>h3<br>h4<br></code></pre></td></tr></table></figure><p>这时目录把我的第一个h3识别成了h2,把我的第一个h4识别成了h3,导致目录收缩错误,变得奇奇怪怪的;</p><p>经过查询后发现,原因可能是这种目录的检索最好是根据</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus">h1<br>h2<br>h3<br>h4<br>h5<br>h6<br></code></pre></td></tr></table></figure><p>这样有层次来的,越级可能会导致识别出错(之前有时候是没问题的);当我把第一个h1改成了h2后解决了问题;</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JavaSE-从入门到入秃</title>
     <link href="/2021/01/30/JavaSE-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%A7%83/"/>
     <url>/2021/01/30/JavaSE-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E7%A7%83/</url>
