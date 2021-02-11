@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.9k 字
+      3.2k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      37
+      40
        分钟
     </span>
   
@@ -238,7 +238,7 @@
               <p>MySQL相关知识:SQL语句,增删改查,范式,视图,事务,索引…</p>
 <a id="more"></a>
 
-<h1 id="MySQL-笔记"><a href="#MySQL-笔记" class="headerlink" title="MySQL 笔记"></a>MySQL 笔记</h1><h2 id="Chapter1-Introduction（持续更新中）"><a href="#Chapter1-Introduction（持续更新中）" class="headerlink" title="Chapter1.Introduction（持续更新中）"></a>Chapter1.Introduction（持续更新中）</h2><h3 id="1-1-SQL"><a href="#1-1-SQL" class="headerlink" title="1.1 SQL"></a>1.1 <strong>SQL</strong></h3><p>Structured Query Language(结构化查询语言)</p>
+<h1 id="MySQL-笔记（持续更新中）"><a href="#MySQL-笔记（持续更新中）" class="headerlink" title="MySQL 笔记（持续更新中）"></a>MySQL 笔记（持续更新中）</h1><h2 id="Chapter1-Introduction"><a href="#Chapter1-Introduction" class="headerlink" title="Chapter1.Introduction"></a>Chapter1.Introduction</h2><h3 id="1-1-SQL"><a href="#1-1-SQL" class="headerlink" title="1.1 SQL"></a>1.1 <strong>SQL</strong></h3><p>Structured Query Language(结构化查询语言)</p>
 <h3 id="1-2-SQL通用语法"><a href="#1-2-SQL通用语法" class="headerlink" title="1.2 SQL通用语法"></a>1.2 SQL通用语法</h3><ul>
 <li><p>MySQL中SQL语句不区分大小写,可以使用小写可读性略强,但是关键字建议使用大写;</p>
 </li>
@@ -511,7 +511,27 @@
 <li><p>注意:唯一约束中可以存在多个NULL,每个NULL值默认为不相等;</p>
 </li>
 </ul>
-<h3 id="5-4-外键约束"><a href="#5-4-外键约束" class="headerlink" title="5.4 外键约束"></a>5.4 外键约束</h3>
+<h3 id="5-4-外键约束"><a href="#5-4-外键约束" class="headerlink" title="5.4 外键约束"></a>5.4 外键约束</h3><ul>
+<li><p>关键字:<code>foreign key</code> 让表与表之间的某些字段产生关系,确保数据的正确性;</p>
+</li>
+<li><p>具体使用</p>
+<p>​    1.创建字段时添加外键</p>
+<p>格式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">create table 表名(<br>				....<br>				外键列<br>				constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称)<br>			);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs mysql">create table employee(<br>		id int primary key auto_increment,<br>		department_id int,<br>    	constraint depid foreign key (department_id) references department(id)<br>);<br>create table department(<br>		id int primary key auto_increment,<br>    	address varchar(20),<br>    	career varchar(20)<br>);<br></code></pre></td></tr></table></figure>
+<p>​    2.创建表后再添加外键</p>
+<p><code>alter table 表明 add constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称);</code></p>
+<p>​    3.删除外键</p>
+<p><code>alter table 表名 drop foreign key 外键名称;</code></p>
+</li>
+<li><p>级联操作:通过级联操作可以控制改变一张表的数据同时改变与之关联表的数据;</p>
+<p>​    1.分类:级联更新 On update cascade</p>
+<p>​                级联删除 On delete cascade</p>
+<p>​    2.使用:</p>
+<p>​        <code>alter table 表明 add constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称) On update cascade On delete cascade;</code></p>
+</li>
+</ul>
+
             </div>
             <hr>
             <div>
