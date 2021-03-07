@@ -401,21 +401,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-10
+                    2021-03-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    363
+                    566
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -466,6 +466,12 @@ h4
 h5
 h6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样有层次来的,越级可能会导致识别出错(之前有时候是没问题的);当我把第一个h1改成了h2后解决了问题;</p>
+<h3 id="文章目录查询错误"><a href="#文章目录查询错误" class="headerlink" title="文章目录查询错误"></a>文章目录查询错误</h3><p>当我点这个5.4的时候跳到了Chapter6 有点奇奇怪怪的</p>
+<p><img src="https://s3.ax1x.com/2021/03/07/6MtEXn.png" alt="收缩错误"></p>
+<p>经过了控制变量等操作 发现了可能的问题所在 那就是在使用##设置标题的时候 标题前面一行是```java的结束```标签 可能是跟#组合产生了一些问题?</p>
+<p><img src="https://s3.ax1x.com/2021/03/07/6MtZmq.png" alt="错误表现"></p>
+<p>单独看文章展示效果 这里的5.2和5.3都没有对齐 说明肯定存在问题 之后我在```后加了个—分隔符 或者是再写文字 即可解决类似问题</p>
+<p>不过比较奇怪的是并不是所有的这样都会导致问题 之前写的markdown就没有问题 不太清楚具体问题产生的来源 待我之后再看看这个目录解析的源码…</p>
 
                 
             </div>
@@ -1189,7 +1195,7 @@ h6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38.4k</span>&nbsp;字
+                class="white-color">41.6k</span>&nbsp;字
             
             
             
